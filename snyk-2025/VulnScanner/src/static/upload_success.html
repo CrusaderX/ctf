@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Title}}</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>{{.Title}}</h1>
+            <p>{{.Message}}</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/about">About VulnScanner</a></li>
+            <li><a href="/templates">Explore Templates</a></li>
+            <li><a href="/upload">Upload Your Template</a></li>
+        </ul>
+    </nav>
+
+    <section class="content container">
+        <h2>Template Fields</h2>
+        <pre>{{.ParsedFields}}</pre> <!-- Display parsed fields -->
+
+        <h2>Simulated Check Result</h2>
+        <p>{{.SimulatedCheck}}</p>
+
+        <h2>Template Output</h2>
+        <pre>{{.Output}}</pre>
+    </section>
+
+    <footer>
+        <p>© 2025 VulnScanner. An open-source project focused on security testing.</p>
+    </footer>
+</body>
+
+</html>

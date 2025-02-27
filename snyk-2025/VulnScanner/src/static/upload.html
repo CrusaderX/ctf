@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Template - VulnScanner</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Try VulnScanner Out</h1>
+            <p>Upload a template to see how VulnScanner works!</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/about">About VulnScanner</a></li>
+            <li><a href="/templates">Explore Templates</a></li>
+            <li><a href="/upload">Try it out!</a></li>
+        </ul>
+    </nav>
+
+
+    <section class="content container">
+        <h2>Upload Template</h2>
+        <p>Choose a template to upload and see how VulnScanner works.</p>
+        <form action="/upload" method="post" enctype="multipart/form-data" class="upload-form">
+            <label for="template" class="form-label">Choose a template to upload:</label>
+            <input type="file" name="template" id="template" accept=".yaml" required class="file-input">
+            <button type="submit" class="submit-btn">Upload Template</button>
+        </form>
+
+        <div class="callout info">
+            <strong>⚡ Get Started:</strong> Learn how <a href=/templates>templates work</a> and use one of the <a
+                href="/templates/list">signed templates</a> from our
+            template
+            list! These templates are pre-verified and safe to run.
+        </div>
+
+        <div class="callout warning">
+            <strong>🚨 Warning:</strong> Do not upload untrusted or unverified templates. Always ensure that the
+            template has been thoroughly reviewed before execution to avoid any malicious actions.
+        </div>
+
+        <h3>How VulnScanner Works</h3>
+        <p>When you upload a template, VulnScanner will:</p>
+        <ol>
+            <li>Verify the signature of the template to ensure its authenticity.</li>
+            <li>Execute the defined requests and check if they meet the specified conditions (status codes, headers,
+                etc.).</li>
+            <li>If applicable, execute the defined <code>code</code> block based on the results of the checks.</li>
+        </ol>
+
+        <p>This ensures that only valid, trusted templates are processed and prevents the execution of unauthorized
+            code.</p>
+
+        <h3>Why Review Templates?</h3>
+        <p>VulnScanner is a powerful tool that can automate security tests, but it’s important to remember that
+            untrusted templates could contain harmful code. Always review the templates you upload to avoid security
+            risks.</p>
+
+        <a href="/templates" class="cta-button">Explore Available Templates</a>
+    </section>
+
+    <footer class="footer">
+        <p>© 2025 VulnScanner. An open-source project focused on security testing.</p>
+    </footer>
+</body>
+
+</html>

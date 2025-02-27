@@ -1,0 +1,255 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+/* Navbar */
+nav {
+    background: #444;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    display: inline-flex;
+    padding-left: 0;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+nav ul li a:hover {
+    color: #ddd;
+}
+
+/* Main Content */
+.content {
+    margin: 20px 0;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ul li a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}
+
+pre {
+    background: #f4f4f4;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Template Field Styles */
+.template-field {
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.template-field h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.template-field p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+/* Table layout for YAML field documentation */
+.template-field table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.template-field table th,
+.template-field table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.template-field table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.template-field table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.template-field table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Call to Action Button */
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #007bff;
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+/* Callout Styles */
+.callout {
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.callout.warning {
+    background-color: #ff3e03;
+    border-left: 5px solid #852a2a;
+    color: #000000;
+}
+
+.callout.info {
+    background-color: #d1ecf1;
+    border-left: 5px solid #0c5460;
+    color: #0c5460;
+}
+
+/* Styling for the file input field */
+.file-input {
+    padding: 10px;
+    font-size: 1rem;
+    margin: 10px 0;
+    width: 100%;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+/* Styling for the label */
+.form-label {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+/* Submit button styling */
+.submit-btn {
+    background-color: #007bff;
+    color: white;
+    font-size: 1.1rem;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+}
+
+/* Button hover effect */
+.submit-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Button active effect */
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+/* Focus effect for the file input */
+.file-input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}

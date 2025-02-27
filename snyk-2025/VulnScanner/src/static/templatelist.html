@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Templates - VulnScanner</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Available Templates</h1>
+            <p>Explore the available templates that can be used for security checks.</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/about">About VulnScanner</a></li>
+            <li><a href="/templates">Explore Templates</a></li>
+            <li><a href="/upload">Try it out!</a></li>
+        </ul>
+    </nav>
+
+    <section class="content container">
+        <h2>Templates List</h2>
+        <ul id="template-list">
+            <!-- Template list will be dynamically populated -->
+        </ul>
+
+        <h3>Download Known Digests</h3>
+        <p><a href="/templates/known_digests.txt">Download the Known Digests File</a></p>
+    </section>
+
+    <footer>
+        <p>© 2025 VulnScanner. An open-source project focused on security testing.</p>
+    </footer>
+
+    <script>
+        // Fetch the list of templates from the server
+        fetch('/templates/list/json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();  // This will parse the JSON if the response is valid
+            })
+            .then(data => {
+                const list = document.getElementById('template-list');
+                data.templates.forEach(template => {
+                    const listItem = document.createElement('li');
+                    const link = document.createElement('a');
+                    link.href = '/templates/download/' + template;
+                    link.textContent = template;
+                    listItem.appendChild(link);
+                    list.appendChild(listItem);
+                });
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+    </script>
+</body>
+
+</html>

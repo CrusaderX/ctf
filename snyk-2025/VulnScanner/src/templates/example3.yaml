@@ -1,0 +1,14 @@
+name: Code Execution Test
+description: A template for testing code execution within the template.
+type: http
+requests:
+  - method: GET
+    path:
+      - "/test"
+    matchers:
+      - type: status
+        status:
+          - 200
+code: echo "Executing a simple, safe code block for testing purposes"
+
+# digest: 3ec41e2a51ff8ac34dadf530d4396d86a99db38daff7feb39283c068e299061a

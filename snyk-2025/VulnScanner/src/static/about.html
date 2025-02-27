@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About VulnScanner</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>About VulnScanner</h1>
+            <p>Learn more about how VulnScanner works and its features.</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/about">About VulnScanner</a></li>
+            <li><a href="/templates">Explore Templates</a></li>
+            <li><a href="/upload">Try it out!</a></li>
+        </ul>
+    </nav>
+
+    <section class="content container">
+        <h2>What is VulnScanner?</h2>
+        <p>VulnScanner is an open-source security testing tool that allows you to perform automated vulnerability checks
+            on various services using customizable YAML templates. It is designed to be easy to use while also offering
+            flexibility for more advanced use cases.</p>
+
+        <h3>Core Features:</h3>
+        <ul>
+            <li><strong>Template-Based Testing</strong>: Define checks for HTTP status codes, response bodies, headers,
+                and more using simple YAML configuration files.</li>
+            <li><strong>Customizable</strong>: Create and upload your own templates, or use the pre-built ones to start
+                testing immediately.</li>
+            <li><strong>Supports Multiple Services</strong>: VulnScanner can test services over HTTP, FTP, SMTP, and
+                other protocols.</li>
+            <li><strong>Open Source</strong>: VulnScanner is completely open-source, allowing you to contribute or
+                modify it according to your needs.</li>
+        </ul>
+
+        <h3>Security</h3>
+        <div class="callout warning">
+            <strong>🚨 Warning:</strong> Do not ever execute untrusted and/or unreviewed templates. Thoroughly review
+            any templates before running VulnScanner. Running untrusted templates could potentially lead to the
+            execution of
+            malicious code on your system, which may result in data loss, system compromise, or unintended consequences.
+        </div>
+
+        <p>All of <a href="/templates">our templates</a> are cryptographically signed and verified before they are made
+            available for use. This ensures that only templates that have been properly vetted and signed by the
+            VulnScanner
+            project are uploaded and executed within the scanner.</p>
+
+        <p>Here’s how the security of the templates works:</p>
+        <ul>
+            <li><strong>Cryptographic Signing:</strong> Every template provided by the VulnScanner team is
+                cryptographically
+                signed and verified. This ensures that the templates cannot be tampered with or altered
+                without
+                invalidating the signature.</li>
+            <li><strong>Signature Verification:</strong> When you run VulnScanner with a template, VulnScanner checks
+                the
+                signature of the template against a known list of valid signatures. This prevents any template with an
+                invalid
+                signature from being executed, ensuring the integrity of the template.</li>
+            <li><strong>Code Execution Control:</strong> The <code>code</code> field in templates allows for server-side
+                code
+                execution, but only when the template passes all checks. This functionality is strictly controlled, and
+                the
+                templates on the site are reviewed to ensure they do not contain malicious or unsafe code.</li>
+            <li><strong>Template Review Process:</strong> All templates made available on the site undergo a thorough
+                review
+                process to ensure they are safe to use and perform legitimate security checks. However, it’s always
+                important to
+                independently verify any template you plan to run in your own environment. Please see our list of
+                default templates and our list of known hashes for more information.</li>
+        </ul>
+
+        <p><strong>Remember:</strong> Although we ensure that all templates published by the VulnScanner project are
+            secure,
+            it’s crucial that you always verify any custom templates that you may create or download from external
+            sources. If
+            you’re not sure about the template’s contents, it’s best to review it thoroughly or run it in a safe,
+            isolated
+            environment first.</p>
+
+
+        <h3>How It Works:</h3>
+        <ol>
+            <li>Create a YAML-based template that defines the checks you want to perform.</li>
+            <li>Upload the template to the server, where it will be executed against your specified services.</li>
+            <li>The scanner will send requests and compare the responses against your template’s criteria, providing you
+                with results.</li>
+        </ol>
+
+        <p>VulnScanner is built with flexibility and scalability in mind. Whether you're a developer, security
+            researcher, or penetration tester, VulnScanner can be used in a variety of ways to automate and streamline
+            your testing process.</p>
+
+        <a href="/templates" class="cta-button">Learn More About Templates</a>
+    </section>
+
+
+
+    <footer class="footer">
+        <p>© 2025 VulnScanner. An open-source project focused on security testing.</p>
+    </footer>
+</body>
+
+</html>

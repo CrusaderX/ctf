@@ -1,0 +1,14 @@
+name: HTTP POST Check
+description: A template to check for successful POST requests.
+type: http
+requests:
+  - method: POST
+    path:
+      - "/submit"
+    body: '{"name": "test"}'
+    matchers:
+      - type: status
+        status:
+          - 200
+
+# digest: fd98ae330ebfa73e90fac55ee5eb1aac874acecf9fb3222f65a0de81fec27210

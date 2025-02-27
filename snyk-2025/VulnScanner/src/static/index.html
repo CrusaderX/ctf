@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to VulnScanner</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Welcome to VulnScanner</h1>
+            <p>Your go-to open-source vulnerability scanner for testing and automating security checks on your services.
+            </p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/about">About VulnScanner</a></li>
+            <li><a href="/templates">Explore Templates</a></li>
+            <li><a href="/upload">Try it out!</a></li>
+        </ul>
+    </nav>
+
+    <section class="content container">
+        <h2>What is VulnScanner?</h2>
+        <p>VulnScanner is a versatile, open-source vulnerability scanner that allows you to create and upload custom
+            templates to perform checks on various services. It uses YAML-based templates to define security checks such
+            as HTTP status codes, response bodies, and other network parameters.</p>
+
+        <p>The scanner performs these checks by sending requests to the services you specify and comparing the responses
+            with your predefined expectations. It's an essential tool for automating vulnerability testing in your
+            development or production environments.</p>
+
+        <h3>Key Features:</h3>
+        <ul>
+            <li>Create custom templates to define checks</li>
+            <li>Support for various services (HTTP, FTP, SMTP, etc.)</li>
+            <li>Easy-to-use interface for uploading and managing templates</li>
+            <li>Flexible YAML configuration for advanced use cases</li>
+        </ul>
+
+        <h2>Get Started</h2>
+        <p>Begin by exploring the available templates or uploading your own to start testing your services. Whether
+            you're looking for HTTP checks or testing other services, VulnScanner makes it easy to create, customize,
+            and manage your security tests.</p>
+
+        <a href="/templates" class="cta-button">Explore Available Templates</a>
+    </section>
+
+    <footer class="footer">
+        <p>© 2025 VulnScanner. An open-source project focused on security testing.</p>
+    </footer>
+</body>
+
+</html>

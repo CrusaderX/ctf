@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Templates Documentation - VulnScanner</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>VulnScanner Templates Documentation</h1>
+            <p>Learn how to create and customize templates for security checks with VulnScanner.</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/about">About VulnScanner</a></li>
+            <li><a href="/templates">Explore Templates</a></li>
+            <li><a href="/upload">Try it out!</a></li>
+        </ul>
+    </nav>
+
+    <section class="content container">
+        <h2>Understanding YAML Templates</h2>
+        <p>VulnScanner uses YAML-based templates to define security checks for various services. Each template includes
+            specific fields that configure how the scanner should interact with your services. Below is a breakdown of
+            the main fields you will find in a template.</p>
+
+        <h3>Template Fields:</h3>
+
+        <!-- Template Field Documentation -->
+        <div class="template-field">
+            <h4><code>name</code></h4>
+            <p>The name of the template. This should be a brief description of the check being performed (e.g., "Basic
+                HTTP Status Check"). It is a mandatory field.</p>
+        </div>
+
+        <div class="template-field">
+            <h4><code>description</code></h4>
+            <p>A short description of what the template does. This helps provide context about the specific check the
+                template will perform.</p>
+        </div>
+
+        <div class="template-field">
+            <h4><code>type</code></h4>
+            <p>This field specifies the type of check. It tells VulnScanner what kind of request to make and what to
+                expect. Common types include:</p>
+            <ul>
+                <li><strong>http</strong>: For HTTP/HTTPS requests (e.g., GET, POST, etc.)</li>
+                <li><strong>ftp</strong>: For FTP server checks</li>
+                <li><strong>smtp</strong>: For SMTP server checks</li>
+            </ul>
+        </div>
+
+        <div class="template-field">
+            <h4><code>requests</code></h4>
+            <p>A list of requests to make. Each request can define:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>method</code></td>
+                        <td>The HTTP method (e.g., GET, POST, PUT, DELETE).</td>
+                    </tr>
+                    <tr>
+                        <td><code>path</code></td>
+                        <td>The endpoint path (e.g., "/login", "/api/v1").</td>
+                    </tr>
+                    <tr>
+                        <td><code>matchers</code></td>
+                        <td>Conditions to check in the response. Matchers can include status codes, body content, or
+                            headers.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="template-field">
+            <h4><code>code</code> (Optional)</h4>
+            <p>This field allows users to define a block of code that will be executed on the server side if the
+                template passes
+                all checks. This is useful for follow-up enumeration or automation, such as running an <code>nmap</code>
+                scan,
+                gathering further details about the target, or executing other server-side commands based on the results
+                of the
+                template’s checks.</p>
+
+            <div class="callout warning">
+                <strong>🚨 Warning:</strong> The code defined in this field will be executed directly on the server
+                where VulnScanner is running. As a result, it poses a significant security risk if used with untrusted
+                templates.
+
+                Always review and verify templates before running them on your systems to ensure they do not contain
+                malicious code. Running untrusted templates could result in system compromise or unintended
+                consequences.</p>
+            </div>
+
+
+            <!-- Example Template -->
+            <h3>Example Template:</h3>
+            <pre class="yaml-example">
+name: Basic HTTP Check
+description: A template to check for HTTP responses.
+type: http
+requests:
+  - method: GET
+    path:
+      - "/"
+    matchers:
+      - type: status
+        status:
+          - 200
+code: echo "It works!"
+</pre>
+
+            <p>This is a simple template that sends a GET request to the root path ("/") and expects a 200 OK status in
+                the
+                response. It then runs a simple, safe command that echoes something to stdout.</p>
+
+            <!-- How It Works -->
+            <h3>How It Works:</h3>
+            <p>When a template is executed, VulnScanner performs the following steps:</p>
+            <ol>
+                <li>It makes HTTP requests as specified in the template.</li>
+                <li>It verifies that the response meets the conditions defined in the matchers.</li>
+                <li>It runs the optional <code>code</code> block (if defined).</li>
+            </ol>
+
+            <h2>Get Started with Templates</h2>
+            <p>Now that you understand the template structure, explore the available templates or create your own to
+                automate security testing for your services.</p>
+
+            <a href="/templates/list" class="cta-button">Explore Available Templates</a>
+    </section>
+
+    <footer class="footer">
+        <p>© 2025 VulnScanner. An open-source project focused on security testing.</p>
+    </footer>
+</body>
+
+</html>
