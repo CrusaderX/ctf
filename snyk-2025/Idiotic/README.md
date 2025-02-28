@@ -1,4 +1,25 @@
-Inside pom.xml file we see package BeanShell, next step is to generate proper payload to execute `readObject` with our binary payload.
+Inside pom.xml file we see 
+
+```xml
+        <dependency>
+            <groupId>org.beanshell</groupId>
+            <artifactId>bsh</artifactId>
+            <version>2.0b5</version>
+        </dependency>
+```
+
+next step is to generate proper payload to abuse `readObject` with our binary payload.
+
+
+```java
+    private Device deserializeDevice(byte[] data) throws Exception {
+        try (ByteArrayInputStream bis = new ByteArrayInputStream(data);
+                ObjectInputStream ois = new ObjectInputStream(bis)) {
+
+            System.out.println("INFO: Starting vulnerable deserialization process.");
+            Object deserializedObject = ois.readObject();
+```
+
 Payload was generated via `ysoserial` (compiled from source, but you can simply download jar file from github):
 
 
