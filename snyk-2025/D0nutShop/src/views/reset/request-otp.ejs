@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D0nutShop</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/admin">Admin Login</a></li>
+        </ul>
+    </nav>
+
+    <section class="content">
+        <h1>Request OTP</h1>
+        <p>Enter your username to request an OTP for resetting your password.</p>
+
+        <form method="POST" action="/reset">
+            <input type="text" name="username" placeholder="Enter Username" required />
+            <button type="submit">Request OTP</button>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 D0nutShop. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

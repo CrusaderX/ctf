@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D0nutShop</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/admin">Admin Login</a></li>
+        </ul>
+    </nav>
+
+    <section class="content">
+        <h1>Enter OTP</h1>
+        <p>An OTP has been generated for your account. Please enter it below to verify your identity.</p>
+
+
+        <p><strong>To retrieve your OTP, send a POST request to the <code>/reset/api/get-otp</code> endpoint
+                with the following payload:</strong></p>
+        <pre>
+        {
+            "username": "[username]",
+            "password": "[password]" 
+        }
+        </pre>
+
+        <p><strong>Example using <code>curl</code>:</strong></p>
+        <pre>
+        curl -X POST [BASE_URL]/reset/api/get-otp \
+            -H "Content-Type: application/json" \
+            -d '{
+                "username": "[your_username]",
+                "password": "[your_password]"
+            }'
+        </pre>
+
+        <br><small> Just roll with it and pretend it's sending an OTP code to your phone or something, I'm too lazy to
+            stand
+            up
+            an
+            OTP server for a CTF challenge </small><br>
+
+        <form method="POST" action="/reset/verify">
+            <input type="hidden" name="username" value="<%= username %>" />
+            <label for="otp">OTP:</label>
+            <input type="text" name="otp" required />
+            <button type="submit">Verify OTP</button>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 D0nutShop. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
